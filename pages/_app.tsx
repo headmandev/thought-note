@@ -1,8 +1,23 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppInitialProps } from 'next/app'
+import { wrapper } from '../app/store'
+import App from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+class WrappedApp extends App<AppInitialProps> {
+  public static getInitialProps = wrapper.getInitialAppProps(
+    () => async (context) => {
+      return {
+        pageProps: {
+          ...(await App.getInitialProps(context)).pageProps,
+        },
+      }
+    }
+  )
+
+  public render() {
+    const { Component, pageProps } = this.props
+    return <Component {...pageProps} />
+  }
 }
 
-export default MyApp
+export default wrapper.withRedux(WrappedApp)
