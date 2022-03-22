@@ -3,7 +3,12 @@ import Head from 'next/head'
 import EditorPage from '../components/EditorPage/EditorPage'
 import { validate as uuidValidate, version as uuidVersion } from 'uuid'
 import { wrapper } from '../app/store'
-import { defaultTitle, getDataAsync, selectId, selectTitle } from '../app/AppSlice'
+import {
+  defaultTitle,
+  getDataAsync,
+  selectId,
+  selectTitle,
+} from '../app/AppSlice'
 import { useAppSelector } from '../app/hooks'
 
 const IdPage = () => {
@@ -13,9 +18,13 @@ const IdPage = () => {
     <>
       <Head>
         <title> {title} </title>
-        <meta name="description" content={
-          (id ? `${defaultTitle} | ` : '') + "Editor for saving and sharing notes"
-        } />
+        <meta
+          name="description"
+          content={
+            (id ? `${defaultTitle} | ` : '') +
+            'Editor for saving and sharing notes'
+          }
+        />
       </Head>
       <EditorPage />
     </>

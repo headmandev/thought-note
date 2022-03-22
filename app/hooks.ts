@@ -6,25 +6,25 @@ import type { AppDispatch, AppState } from './store'
 
 export const useForm =
   <TContent>(defaultValues: TContent) =>
-    (handler: (content: TContent) => void) =>
-      async (event: ChangeEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        event.persist()
+  (handler: (content: TContent) => void) =>
+  async (event: ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    event.persist()
 
-        const form = event.target as HTMLFormElement
-        const elements = Array.from(form.elements) as HTMLInputElement[]
-        const data = elements
-          .filter((element) => element.hasAttribute('name'))
-          .reduce(
-            (object, element) => ({
-              ...object,
-              [`${element.getAttribute('name')}`]: element.value,
-            }),
-            defaultValues
-          )
-        await handler(data)
-        form.reset()
-      }
+    const form = event.target as HTMLFormElement
+    const elements = Array.from(form.elements) as HTMLInputElement[]
+    const data = elements
+      .filter((element) => element.hasAttribute('name'))
+      .reduce(
+        (object, element) => ({
+          ...object,
+          [`${element.getAttribute('name')}`]: element.value,
+        }),
+        defaultValues
+      )
+    await handler(data)
+    form.reset()
+  }
 
 // // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 // export const useInterval = (callback: () => void, delay: number) => {
@@ -66,18 +66,17 @@ export const useForm =
 //   return debouncedValue;
 // }
 
-
 // Hook
 export function usePrevious<T>(value: T): T {
   // The ref object is a generic container whose current property is mutable ...
   // ... and can hold any value, similar to an instance property on a class
-  const ref: any = useRef<T>();
+  const ref: any = useRef<T>()
   // Store current value in ref
   useEffect(() => {
-    ref.current = value;
-  }, [value]); // Only re-run if value changes
+    ref.current = value
+  }, [value]) // Only re-run if value changes
   // Return previous value (happens before update in useEffect above)
-  return ref.current;
+  return ref.current
 }
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`

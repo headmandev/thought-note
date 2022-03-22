@@ -1,14 +1,9 @@
-import Document, {
-  Html,
-  Main,
-  Head,
-  NextScript,
-} from 'next/document'
+import Document, { Html, Main, Head, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html className={"dark"}>
+      <Html className={'dark'}>
         <Head>
           <link
             rel="stylesheet"

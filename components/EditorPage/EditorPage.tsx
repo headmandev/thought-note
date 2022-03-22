@@ -17,7 +17,6 @@ import {
 import Editor from '../Editor/Editor'
 import { useRouter } from 'next/router'
 
-
 export default function EditorPage() {
   const dispatch = useAppDispatch()
   const isDark = useAppSelector(selectIsDark)

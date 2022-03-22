@@ -9,8 +9,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{ title }</title>
-        <meta name="description" content="Editor for saving and sharing notes" />
+        <title>{title}</title>
+        <meta
+          name="description"
+          content="Editor for saving and sharing notes"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <EditorPage />

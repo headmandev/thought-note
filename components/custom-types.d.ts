@@ -1,7 +1,4 @@
-import {
-  Descendant,
-  BaseEditor,
-} from 'slate'
+import { Descendant, BaseEditor } from 'slate'
 import { ReactEditor } from 'slate-react'
 import { HistoryEditor } from 'slate-history'
 
@@ -35,7 +32,11 @@ export type HeadingTwoElement = {
   children: Descendant[]
 }
 
-export type ListItemElement = { type: 'list-item'; align?: string; children: Descendant[] }
+export type ListItemElement = {
+  type: 'list-item'
+  align?: string
+  children: Descendant[]
+}
 
 export type ParagraphElement = {
   type: 'paragraph'

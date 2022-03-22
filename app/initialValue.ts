@@ -3,9 +3,7 @@ import { Descendant } from 'slate'
 export const initialValue = (): Descendant[] => [
   {
     type: 'heading',
-    children: [
-      { text: 'Thought Note' },
-    ],
+    children: [{ text: 'Thought Note' }],
   },
   {
     type: 'paragraph',
@@ -37,12 +35,18 @@ export const initialValue = (): Descendant[] => [
   {
     type: 'paragraph',
     align: 'center',
-    children: [{ text: 'Each new note will be saved automatically and you will be able to share with it. ' }],
+    children: [
+      {
+        text: 'Each new note will be saved automatically and you will be able to share with it. ',
+      },
+    ],
   },
   {
     type: 'paragraph',
     align: 'center',
-    children: [{ text: 'Don\'t forget to save an unique link of your own edited note. ' }],
+    children: [
+      { text: "Don't forget to save an unique link of your own edited note. " },
+    ],
   },
   {
     type: 'paragraph',

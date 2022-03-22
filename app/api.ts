@@ -11,8 +11,10 @@ export async function fetchNote(id: string): Promise<TextInfo> {
   return res.json()
 }
 
-
-export async function saveNote(id: string, data: Descendant[]): Promise<TextInfo> {
+export async function saveNote(
+  id: string,
+  data: Descendant[]
+): Promise<TextInfo> {
   const response = await fetch(`${process.env.API_URL}/notes/${id}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
@@ -20,7 +22,6 @@ export async function saveNote(id: string, data: Descendant[]): Promise<TextInfo
   })
   return response.json()
 }
-
 
 export async function createNote(data: Descendant[]): Promise<TextInfo> {
   const response = await fetch(`${process.env.API_URL}/notes`, {
