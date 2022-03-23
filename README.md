@@ -2,12 +2,16 @@
 
 Simple text editor service for notes and sharing information
 
+![alt text](https://media.giphy.com/media/YoeJzumMn7Ge0xWzPD/giphy.gif)
+
+> Based on Next.js / Redux.js / Slate.js / Tailwindcss
+
 - Intuitive interface
 - Minimalistic design
 - Dark/Light Theme
 - Automatic data saving
 
-####Based on Next.js / Redux.js / Slate.js / Tailwindcss
+
 
 #### Inspired by **papier.app**
 
@@ -28,4 +32,4 @@ It is necessary for this project.
 MIT
 
 [papier.app]: https://papier.app/
-[thought-note-api]: https://papier.app/
+[Thought-Note-API]: https://github.com/headmandev/thought-note-api
