@@ -95,7 +95,7 @@ export default function EditorPage() {
               rel="noreferrer"
               className="pl-1 pr-1"
               target="_blank"
-              href="https://github.com/headmandev"
+              href="https://github.com/headmandev/thought-note"
             >
               @headmandev
             </a>
